@@ -9,17 +9,16 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/hibernate</property>
+        <property name="connection.url">jdbc:mysql://192.168.33.61/hibernate</property>
 
-        <property name="connection.username">root</property>
-        <property name="connection.password">1801-System</property>
+        <property name="connection.username">hibernate</property>
+        <property name="connection.password">test</property>
 
         <!-- JDBC connection pool (use the built-in) -->
 		<!--         <property name="connection.pool_size">1</property> -->
 
         <!-- SQL dialect -->
-<!--         <property name="dialect">org.hibernate.dialect.MySQLDialect</property> -->
-		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
         <!-- Enable Hibernate's automatic session context management -->
 		<!-- <property name="current_session_context_class">thread</property> -->
@@ -33,8 +32,8 @@
         <!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">create</property>
 
-        <mapping resource= "com/hibernate/model/Student.hbm.xml"/> 
-		<mapping class="com.hibernate.model.Teacher"/>
+        <mapping resource= "com/model/Hibernate/Student.hbm.xml"/> 
+		<mapping class="com.model.Hibernate.Teacher"/>
 		 
     </session-factory>
 

@@ -3,10 +3,20 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 	
-	<hibernate-mapping package="com.hibernate.model">
-		<class name="Student">
-			<id name="id" />
+	<hibernate-mapping package="com.model.Hibernate">
+	
+	<!--  当实体类名和数据库名不一致时需要指定table属性 -->
+	<!-- 	<class name="Student" > -->
+		<class name="Student"  table="_Student">
+		
+		<!-- id属性表示主键，必须放在第一个 -->
+			<id name="id"  />
+			
+		<!-- 字段名一致 -->	
 			<property name="name" />
-			<property name="age" />
+			
+		<!-- 当字段名和表中不一致时需要指定column值 -->	
+			<property name="age" column="_age"/>
+			
 	    </class>
 	</hibernate-mapping>

@@ -11,7 +11,7 @@ public class Student {
 		return id;
 	}
 	/**
-	 * @param id Ҫ���õ� id
+	 * @param id 要设置的 id
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -23,7 +23,7 @@ public class Student {
 		return name;
 	}
 	/**
-	 * @param name Ҫ���õ� name
+	 * @param name 要设置的 name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -35,7 +35,7 @@ public class Student {
 		return age;
 	}
 	/**
-	 * @param age Ҫ���õ� age
+	 * @param age 要设置的 age
 	 */
 	public void setAge(int age) {
 		this.age = age;
