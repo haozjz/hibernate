@@ -7,18 +7,32 @@
 
     <session-factory>
 
-        <!-- Database connection settings -->
+        <!--hibernate 这个文件里 配置数据源 连接池 -->
+        <!-- mysql 连接设置 SQL dialect方言设置-->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://192.168.33.61/hibernate</property>
-
         <property name="connection.username">hibernate</property>
         <property name="connection.password">test</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- oracle连接设置 -->          
+       <!--  <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@10.26.181.126:1521:orcl</property>
+        <property name="connection.username">scott</property>
+        <property name="connection.password">tiger</property>
+      	<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+      	<property name="dialect">org.hibernate.dialect.MySQLDialect</property> -->
+      
+       
+       <!-- sqlserver 2008连接设置 -->
+       <!-- <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+       <property name="connection.url">jdbc:sqlserver://192.168.33.61:1433;DatabaseName=hibernate</property>
+       <property name="connection.username">hibernate</property>
+       <property name="connection.password">test</property>
+       <property name="dialect">org.hibernate.dialect.SQLServerDialect</property> -->
 
         <!-- JDBC connection pool (use the built-in) -->
 		<!--         <property name="connection.pool_size">1</property> -->
-
-        <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
         <!-- Enable Hibernate's automatic session context management -->
 		<!-- <property name="current_session_context_class">thread</property> -->
@@ -27,10 +41,15 @@
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
+        <!-- 显示Hibernate持久化操作所生成的SQL -->
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-		<property name="hbm2ddl.auto">create</property>
+        <!-- 根据需要自动创建数据库 create update --> 
+		<property name="hbm2ddl.auto">update</property>
+		
+		 <!-- 将SQL脚本进行格式化后再输出--> 
+		 <property name="hibernate.format_sql">true</property>
 
         <mapping resource= "com/model/Hibernate/Student.hbm.xml"/> 
 		<mapping class="com.model.Hibernate.Teacher"/>

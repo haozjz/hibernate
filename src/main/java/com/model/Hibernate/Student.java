@@ -1,9 +1,26 @@
 package com.model.Hibernate;
 
+import java.util.Date;
+
 public class Student {
 	private int id;
 	private String name;
 	private int age;
+	private Date date ;
+	private int uuid; //数据自动生成id
+	
+	public int getUuid() {
+		return uuid;
+	}
+	public void setUuid(int uuid) {
+		this.uuid = uuid;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	/**
 	 * @return id
 	 */

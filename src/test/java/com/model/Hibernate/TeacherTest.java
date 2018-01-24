@@ -2,6 +2,8 @@ package com.model.Hibernate;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -34,11 +36,11 @@ public class TeacherTest {
 	@Test
 	public void test() {
 		Teacher t = new Teacher();
-		t.setId(38);
+//		t.setId(38);  
 		t.setName("lis1i1");
 		t.setTitle("中级12");
-		
-		
+		t.setDate(new Date());
+		t.setGrade(Grade.High);
 		
 		//通过辅助类来 获取sf
 //		Session session = HibernateUtil.getSessionFactory().openSession();

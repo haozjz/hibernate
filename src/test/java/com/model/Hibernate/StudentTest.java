@@ -1,6 +1,6 @@
 package com.model.Hibernate;
 
-import static org.junit.Assert.*;
+import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,7 +18,7 @@ public class StudentTest {
 	static SessionFactory sf ;
 	static Session session ;
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass() throws Exception {		
 		
 		//通过辅助类来 获取sf
 		//	Session session = HibernateUtil.getSessionFactory().openSession();
@@ -40,6 +40,7 @@ public class StudentTest {
 		student.setId(11);
 		student.setAge(2);
 		student.setName("s1");
+		student.setDate(new Date());
 		
 		//所有的操作都要放在以事务里面
 		session.beginTransaction();
