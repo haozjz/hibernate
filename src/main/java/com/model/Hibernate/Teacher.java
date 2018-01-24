@@ -1,6 +1,5 @@
 package com.model.Hibernate;
 
-import java.awt.image.TileObserver;
 import java.util.Date;
 
 import javax.persistence.Column;
